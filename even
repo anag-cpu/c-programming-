@@ -1,0 +1,11 @@
+#include <stdioh>
+main()
+{
+ int n;
+ while (n<= 500)
+  {
+   while(n%2==0)
+   printf("%d",n)
+  }
+}
+    
