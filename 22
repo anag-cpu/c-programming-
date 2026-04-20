@@ -1,0 +1,64 @@
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char str[100], str2[100];
+    int choice;
+
+    printf("Enter string: ");
+    scanf("%s", str);
+
+    do {
+        printf("\nMenu:");
+        printf("\n1. Length");
+        printf("\n2. Reverse");
+        printf("\n3. Compare");
+        printf("\n4. Palindrome");
+        printf("\n5. Substring");
+        printf("\n6. Exit");
+
+        printf("\nEnter choice: ");
+        scanf("%d", &choice);
+
+        switch(choice) {
+            case 1:
+                printf("Length = %lu", strlen(str));
+                break;
+
+            case 2:
+                strrev(str);
+                printf("Reversed = %s", str);
+                break;
+
+            case 3:
+                printf("Enter another string: ");
+                scanf("%s", str2);
+                if(strcmp(str, str2) == 0)
+                    printf("Equal");
+                else
+                    printf("Not Equal");
+                break;
+
+            case 4:
+                strcpy(str2, str);
+                strrev(str2);
+                if(strcmp(str, str2) == 0)
+                    printf("Palindrome");
+                else
+                    printf("Not Palindrome");
+                break;
+
+            case 5:
+                printf("Enter substring: ");
+                scanf("%s", str2);
+                if(strstr(str, str2))
+                    printf("Found");
+                else
+                    printf("Not Found");
+                break;
+        }
+
+    } while(choice != 6);
+
+    return 0;
+}
